@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Manrope } from "next/font/google";
+import { brand } from "@/lib/brand";
 import "./globals.css";
 
 const display = Bebas_Neue({
@@ -14,9 +15,9 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Mikk — Personaaltreener",
+  title: brand.name,
   description:
-    "Personaaltreening ja veebitreening Eestis. Individuaalne lähenemine, tehnika ja püsivad tulemused.",
+    "Personaaltreening ja veebitreening. Individuaalne lähenemine, tehnika ja püsivad tulemused.",
 };
 
 export default function RootLayout({

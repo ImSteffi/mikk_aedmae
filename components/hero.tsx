@@ -1,4 +1,5 @@
 import { OfferArrow } from "@/components/offer-arrow";
+import { brand } from "@/lib/brand";
 
 export function Hero() {
   return (
@@ -44,31 +45,10 @@ export function Hero() {
 function HeroInfoCard() {
   return (
     <div className="border border-white/10 bg-[#111111]/95 px-4 py-3.5 sm:px-5 sm:py-4">
-      <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-        <a
-          href="https://www.instagram.com/mikkaedmae/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 text-sm font-medium tracking-wide text-fg transition-colors duration-150 hover:text-accent"
-        >
-          <span
-            aria-hidden
-            className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent/15 text-accent"
-          >
-            <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm10.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
-            </svg>
-          </span>
-          @mikkaedmae
-        </a>
-
-        <span aria-hidden className="hidden h-8 w-px bg-white/15 sm:block" />
-
-        <p className="text-[11px] font-semibold uppercase tracking-[0.14em]">
-          <span className="text-accent">Mikk</span>
-          <span className="text-fg-muted"> · personaaltreener</span>
-        </p>
-      </div>
+      <p className="text-[11px] font-semibold uppercase tracking-[0.14em]">
+        <span className="text-accent">{brand.shortName}</span>
+        <span className="text-fg-muted"> · {brand.tagline}</span>
+      </p>
 
       <div className="mt-3.5 grid grid-cols-2 gap-3 border-t border-white/10 pt-3.5 sm:max-w-sm">
         <div>

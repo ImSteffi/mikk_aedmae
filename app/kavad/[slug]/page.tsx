@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
+import { brand } from "@/lib/brand";
 import {
   genderLabel,
   getPlan,
@@ -20,7 +21,7 @@ export async function generateMetadata({
   const plan = getPlan(slug);
   if (!plan) return { title: "Kava ei leitud" };
   return {
-    title: `${plan.title} · ${genderLabel(plan.gender)} — Mikk`,
+    title: `${plan.title} · ${genderLabel(plan.gender)} — ${brand.name}`,
     description: plan.description,
   };
 }
@@ -33,8 +34,6 @@ export default async function PlanPage({
   const { slug } = await params;
   const plan = getPlan(slug);
   if (!plan) notFound();
-
-  const buyHref = "https://www.instagram.com/mikkaedmae/";
 
   return (
     <>
@@ -78,12 +77,7 @@ export default async function PlanPage({
               <p className="font-[family-name:var(--font-display)] text-5xl tracking-wide text-accent">
                 {plan.price}€
               </p>
-              <a
-                href={buyHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary min-w-[10rem]"
-              >
+              <a href="/#kontakt" className="btn-primary min-w-[10rem]">
                 Osta kava
               </a>
             </div>

@@ -1,6 +1,4 @@
-const INSTAGRAM = "https://www.instagram.com/mikkaedmae/";
-const FACEBOOK =
-  "https://www.facebook.com/profile.php?id=100002497901197";
+import { brand } from "@/lib/brand";
 
 export function ContactSection() {
   return (
@@ -20,47 +18,24 @@ export function ContactSection() {
 
           <div className="flex flex-col justify-center gap-3">
             <a
-              href={INSTAGRAM}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:treener@example.com"
               className="btn-primary w-full justify-center sm:w-auto sm:self-start"
             >
-              Instagram · @mikkaedmae
+              treener@example.com
             </a>
-            <a
-              href={FACEBOOK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-ghost w-full justify-center sm:w-auto sm:self-start"
-            >
-              Facebook
-            </a>
+            <p className="text-xs text-fg-muted">
+              Demo-kontakt — asenda oma e-posti ja sotsiaalmeediaga.
+            </p>
           </div>
         </div>
 
         <footer className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-sm text-fg-muted sm:flex-row sm:items-center">
-          <p className="font-[family-name:var(--font-display)] text-xl tracking-[0.14em] text-fg">
-            MIKK
+          <p className="font-[family-name:var(--font-display)] text-xl tracking-[0.1em] text-fg">
+            {brand.shortName}
           </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <a
-              href={INSTAGRAM}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-fg"
-            >
-              @mikkaedmae
-            </a>
-            <a
-              href={FACEBOOK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-fg"
-            >
-              Facebook
-            </a>
-            <p>© {new Date().getFullYear()} Mikk. Kõik õigused kaitstud.</p>
-          </div>
+          <p>
+            © {new Date().getFullYear()} {brand.name}. Kõik õigused kaitstud.
+          </p>
         </footer>
       </div>
     </section>

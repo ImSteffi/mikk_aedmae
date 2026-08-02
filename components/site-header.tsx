@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { brand } from "@/lib/brand";
 
 const links = [
   { href: "/#avaleht", label: "Avaleht" },
@@ -9,25 +10,21 @@ const links = [
   { href: "/#kontakt", label: "Kontakt" },
 ];
 
-const INSTAGRAM = "https://www.instagram.com/mikkaedmae/";
-const FACEBOOK =
-  "https://www.facebook.com/profile.php?id=100002497901197";
-
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-[4.25rem] md:px-8">
-        <a href="/#avaleht" className="flex items-center gap-2.5 group">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 md:h-[4.25rem] md:px-8">
+        <a href="/#avaleht" className="flex min-w-0 items-center gap-2.5 group">
           <span
             aria-hidden
-            className="grid h-8 w-8 place-items-center rounded-sm bg-accent text-[11px] font-bold text-white transition-transform duration-150 ease-[var(--ease-out)] group-active:scale-[0.97]"
+            className="grid h-8 w-8 shrink-0 place-items-center rounded-sm bg-accent text-[10px] font-bold text-white transition-transform duration-150 ease-[var(--ease-out)] group-active:scale-[0.97]"
           >
-            M
+            {brand.mark}
           </span>
-          <span className="font-[family-name:var(--font-display)] text-2xl tracking-[0.12em] text-fg">
-            MIKK
+          <span className="truncate font-[family-name:var(--font-display)] text-xl tracking-[0.1em] text-fg sm:text-2xl">
+            {brand.shortName}
           </span>
         </a>
 
@@ -47,10 +44,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <SocialIcon label="Instagram" href={INSTAGRAM}>
+          <SocialIcon label="Instagram" href="/#kontakt">
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm10.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
           </SocialIcon>
-          <SocialIcon label="Facebook" href={FACEBOOK}>
+          <SocialIcon label="Facebook" href="/#kontakt">
             <path d="M14 3h3v3h-3c-.6 0-1 .4-1 1v2h4l-.5 3H13v8h-3v-8H8V9h2V7c0-2.2 1.8-4 4-4z" />
           </SocialIcon>
         </div>
@@ -92,14 +89,6 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
-          <div className="mt-2 flex gap-3 border-t border-border pt-4 pb-2">
-            <SocialIcon label="Instagram" href={INSTAGRAM}>
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm10.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
-            </SocialIcon>
-            <SocialIcon label="Facebook" href={FACEBOOK}>
-              <path d="M14 3h3v3h-3c-.6 0-1 .4-1 1v2h4l-.5 3H13v8h-3v-8H8V9h2V7c0-2.2 1.8-4 4-4z" />
-            </SocialIcon>
-          </div>
         </nav>
       </div>
     </header>
@@ -118,8 +107,6 @@ function SocialIcon({
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       aria-label={label}
       className="grid h-9 w-9 place-items-center text-fg-muted transition-colors duration-150 hover:text-fg active:scale-[0.97]"
     >
