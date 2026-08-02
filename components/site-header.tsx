@@ -3,11 +3,10 @@
 import { useState } from "react";
 
 const links = [
-  { href: "#avaleht", label: "Avaleht" },
-  { href: "#minust", label: "Minust" },
-  { href: "#pakkumised", label: "Pakkumised" },
-  { href: "#tulemused", label: "Tulemused" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#avaleht", label: "Avaleht" },
+  { href: "/#minust", label: "Minust" },
+  { href: "/#treeningkavad", label: "Kavad" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 const INSTAGRAM = "https://www.instagram.com/mikkaedmae/";
@@ -20,7 +19,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-[4.25rem] md:px-8">
-        <a href="#avaleht" className="flex items-center gap-2.5 group">
+        <a href="/#avaleht" className="flex items-center gap-2.5 group">
           <span
             aria-hidden
             className="grid h-8 w-8 place-items-center rounded-sm bg-accent text-[11px] font-bold text-white transition-transform duration-150 ease-[var(--ease-out)] group-active:scale-[0.97]"
