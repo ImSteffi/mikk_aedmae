@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { OfferArrow } from "@/components/offer-arrow";
 import { brand } from "@/lib/brand";
 
@@ -6,11 +7,11 @@ export function Hero() {
     <section id="avaleht" className="relative overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(225,6,0,0.14),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_40%,rgba(225,6,0,0.14),transparent_52%)]"
       />
 
-      <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-5 pb-14 pt-14 md:min-h-[min(78vh,720px)] md:px-8 md:pb-20 md:pt-16">
-        <div className="max-w-2xl">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-5 pb-14 pt-10 md:grid-cols-[1fr_1fr] md:gap-10 md:px-8 md:pb-20 md:pt-12 lg:min-h-[min(82vh,800px)]">
+        <div className="relative z-20 order-2 max-w-xl md:order-1">
           <h1 className="rise-in font-[family-name:var(--font-display)] text-[clamp(3.4rem,8.2vw,5.6rem)] leading-[0.92] tracking-[0.02em] text-fg">
             TREENI KOOS{" "}
             <span className="text-accent">EESTI</span> TREENERIGA
@@ -35,6 +36,23 @@ export function Hero() {
 
           <div className="rise-in rise-in-delay-3 mt-8 max-w-md">
             <HeroInfoCard />
+          </div>
+        </div>
+
+        <div className="rise-in rise-in-delay-1 relative order-1 md:order-2">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden md:max-w-none">
+            <Image
+              src="/images/hero.jpg"
+              alt="Treening saalis — dummy foto (Unsplash)"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 90vw, 480px"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-bg to-transparent"
+            />
           </div>
         </div>
       </div>

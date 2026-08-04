@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { OfferArrow } from "@/components/offer-arrow";
 
 const points = [
@@ -18,40 +19,52 @@ const points = [
 export function TrustSection() {
   return (
     <section id="minust" className="border-b border-border py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-          Unusta valmisplaanid
-        </p>
-        <h2 className="mt-2 font-[family-name:var(--font-display)] text-5xl tracking-wide text-fg md:text-6xl">
-          MIKS MIND{" "}
-          <span className="text-accent">USALDADA?</span>
-        </h2>
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:gap-14 md:px-8 lg:grid-cols-2">
+        <div className="relative aspect-square w-full overflow-hidden bg-[#121212]">
+          <Image
+            src="/images/trust.jpg"
+            alt="Jõusaal — dummy foto (Unsplash)"
+            fill
+            className="object-cover grayscale contrast-110"
+            sizes="(max-width: 1024px) 100vw, 520px"
+          />
+        </div>
 
-        <ul className="mt-10 space-y-7">
-          {points.map((point) => (
-            <li key={point.title}>
-              <div className="mb-2 flex items-center gap-3">
-                <span aria-hidden className="h-[2px] w-9 shrink-0 bg-accent" />
-                <h3 className="text-lg font-semibold text-fg">{point.title}</h3>
-              </div>
-              <p className="pl-12 text-sm leading-relaxed text-fg-muted md:text-[0.95rem]">
-                {point.body}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+            Unusta valmisplaanid
+          </p>
+          <h2 className="mt-2 font-[family-name:var(--font-display)] text-5xl tracking-wide text-fg md:text-6xl">
+            MIKS MIND{" "}
+            <span className="text-accent">USALDADA?</span>
+          </h2>
 
-        <div className="mt-10 flex flex-wrap items-center gap-3">
-          <a href="#kontakt" className="btn-primary">
-            Minust lähemalt
-          </a>
-          <a
-            href="#treeningkavad"
-            className="btn-ghost inline-flex items-center justify-center gap-2.5"
-          >
-            Vaata kavasid
-            <OfferArrow />
-          </a>
+          <ul className="mt-10 space-y-7">
+            {points.map((point) => (
+              <li key={point.title}>
+                <div className="mb-2 flex items-center gap-3">
+                  <span aria-hidden className="h-[2px] w-9 shrink-0 bg-accent" />
+                  <h3 className="text-lg font-semibold text-fg">{point.title}</h3>
+                </div>
+                <p className="pl-12 text-sm leading-relaxed text-fg-muted md:text-[0.95rem]">
+                  {point.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <a href="#kontakt" className="btn-primary">
+              Minust lähemalt
+            </a>
+            <a
+              href="#treeningkavad"
+              className="btn-ghost inline-flex items-center justify-center gap-2.5"
+            >
+              Vaata kavasid
+              <OfferArrow />
+            </a>
+          </div>
         </div>
       </div>
     </section>
